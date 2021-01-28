@@ -1,0 +1,9 @@
+.section{
+    direction:rtl;
+    text-align:right !important;
+  }
+
+  .absolute-bottom-left{
+    right: 0;
+    left: unset;
+  }
