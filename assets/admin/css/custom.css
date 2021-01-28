@@ -1,0 +1,327 @@
+.select2-container--default .select2-selection--multiple .select2-selection__choice__remove{
+    background-color: red;
+    color: #fff;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice__display{
+    padding-left: 12px;
+}
+
+.image-circle{
+   width:75px;
+   height:75px;
+   border-radius: 50%;
+   object-fit: cover;
+}
+.image-rounded{
+   width:75px;
+   height:75px;
+   object-fit: cover;
+}
+
+.image-preview{
+    background: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.image-preview_alt{
+    background: center;
+    background-repeat: no-repeat;
+}
+
+.clear{
+    cursor: pointer;
+}
+
+.nav-select{
+    background: transparent;
+    color: #fff;
+    border: none;
+}
+
+.nav-select option{
+    color: black;
+}
+
+.nav-select:focus-visible{
+    outline:none;
+}
+
+.avatar-upload .avatar-edit input + label:after {
+    font-weight: 700!important;
+    font-family: "Font Awesome 5 Free"!important;
+}
+
+
+@media screen and (min-width:992px) {
+    .chat__list {
+        min-height: 400px;
+    }
+}
+.chat__list {
+    margin: 0;
+    display: block;
+    max-height: calc(100vh - 250px);
+    overflow-y: scroll;
+}
+
+.chat__list > li {
+    width: 100%;
+    border-bottom: 1px solid #e1e1e1;
+    padding: 10px 0;
+}
+
+.chat__list > li:last-child {
+    border: none;
+}
+
+.chat__item {
+    width: 100%;
+}
+
+.chat__item .item__inner {
+    display: block;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.chat__item .item__inner .chat__meta {
+    margin: 3px;
+    margin-top: -25px;
+    padding-left: 65px;
+    font-size: 13px;
+}
+
+.chat__item .item__inner a {
+    color: #456;
+}
+
+.chat__item.active .item__inner, .chat__item:hover .item__inner {
+    background: rgba(31, 31, 35, 0.05);
+}
+.chat__msg-header .post__creator {
+    display: inline-flex;
+    position: relative;
+}
+
+.chat__msg-header .post__creator .profile-link {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+.msg__wrapper {
+    padding: 0;
+}
+.chat__msg-body {
+    max-height: calc(100vh - 250px);
+    min-height: 400px;
+    overflow-y: scroll;
+    background: #d3d3d329;
+}
+.chat__msg-body .msg__wrapper li p {
+  
+    padding: 10px 15px;
+    background: rgba(31, 31, 35, 0.05);
+    border-radius: 15px 15px 15px 0;
+    font-size: 15px;
+    display: inline-block;
+}
+.out__msg {
+ 
+    background: #6777efd1!important;
+    color: #fff;
+}
+
+
+.chat__msg-footer .send__msg {
+    box-shadow: 0 0 15px rgba(31, 31, 35, 0.05);
+}
+
+.chat__msg-footer .send__msg .input-group {
+    position: relative;
+}
+
+.chat__msg-footer .send__msg .form--control {
+    border: 1px solid #e1e1e1 !important;
+    height: 50px;
+    padding: 10px 15px;
+    padding-left: 60px;
+}
+
+.chat__msg-footer .send__msg .send-btn {
+    background: rgba(31, 31, 35, 0.05);
+    width: 50px !important;
+    height: 50px !important;
+    padding: 0;
+    font-size: 24px;
+    color: #fff;
+    background: #6777ef !important;
+}
+
+.chat__msg-footer .send__msg .upload-file {
+    cursor: pointer;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    bottom: 0;
+    z-index: 11;
+    width: 50px;
+    height: 50px;
+    background: rgba(31, 31, 35, 0.05);
+    font-size: 18px;
+    border-radius: 5px 0 0 5px !important;
+}
+
+.msg__item .comment-img {
+    max-width: 300px;
+    width: 100%;
+}
+
+.msg__item .comment-img img {
+    width: 100%;
+}
+ul li {
+    list-style: none;
+}
+.msg__item .post__creator-content {
+    padding-top: 0;
+}
+.chat__msg-footer .send__msg .upload-file, 
+.chat__msg-footer .send__msg .upload-file i {
+    text-align: center;
+    line-height: 50px !important;
+}
+.send-btn {
+    border-radius: 0 5px 5px 0;
+    line-height: 50px;
+}
+.msg__item .post__creator-content .comment-date {
+    display: block;
+    font-size: 11px;
+    margin-bottom: 7px;
+}
+
+.outgoing__msg .post__creator {
+    flex-direction: row-reverse;
+}
+.chat__msg-footer {
+    margin-top: 20px;
+}
+
+.outgoing__msg .post__creator-content {
+    text-align: right;
+    padding-left: 18px;
+    padding-right: 18px;
+}
+.incoming__msg .post__creator-content {
+    padding-left: 18px;
+    padding-right: 18px;
+}
+
+.outgoing__msg .post__creator-content p {
+    border-radius: 15px 15px 0 15px !important;
+}
+.outgoing__msg .post__creator {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+}
+
+
+.post__creator-content {
+    max-width: 90%;}
+    @media screen and (min-width: 768px) {
+        
+.post__creator-content {
+    max-width: 575px;}
+    }
+
+
+body * ::-webkit-scrollbar {
+    width: 5px !important;
+    height: 5px;
+}
+
+body * ::-webkit-scrollbar-thumb {
+    background: rgba(31, 31, 35, 0.4) !important;
+    border-radius: 5px !important;
+}
+.msg__wrapper li {
+    list-style: none;
+    padding: 0;
+}
+.msg__wrapper li  p {
+    margin-bottom: 0;
+}
+@media screen and (min-width:1200px) and (max-width:1399px) {
+    .currency--card {
+        flex: 0 0 calc(100% / 3);
+        max-width: calc(100% / 3);
+    }
+}
+
+.cookie-section{
+    display: none;
+}
+
+
+@media screen and (max-width:991px) {
+    .table-responsive {
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+        max-height: 700px;
+    }
+    .table-responsive .table {
+        min-width: 0 !important;
+        max-width: 100% !important;
+        width: 100%;
+        border-bottom: 1px solid #e5e5e5;
+        margin-bottom: 0;
+    }
+    .table-responsive .table tr {
+        display: block;
+        border-left: 1px solid #e5e5e5;
+        border-right: 1px solid #e5e5e5;
+    }
+    
+    .table-responsive .table th {
+        display: none;
+    }
+    .table-responsive .table tr  td {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: unset !important;
+        padding: 10px 15px !important;
+        text-align: right;
+        white-space: pre-line;
+        word-break: break-word;
+    }
+    .table-responsive .table tr:not(:last-child) {
+        border-bottom: 1px solid #e5e5e5;
+    }
+    .table-responsive .table tr  td::before {
+        content: attr(data-label);
+        font-family: 'Manrope', sans-serif;
+        color: #111;
+        text-transform: capitalize;
+        font-weight: 500;
+        margin-right: auto;
+        white-space: nowrap;
+        word-wrap: initial;
+    }
+}
+@media screen and (max-width: 350px) {
+    
+    .table-responsive .table tr  td::before {
+        font-size: 14px;
+    }
+    .card .card-body {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+}
+
