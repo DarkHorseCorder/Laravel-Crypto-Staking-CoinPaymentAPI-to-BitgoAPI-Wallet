@@ -1,0 +1,126 @@
+/*Footer*/
+.footer-top {
+	padding: 90px 0 45px;
+}
+.footer-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin: 0 -12px;
+	.footer-logo,
+	.footer-links,
+	.footer-comunity {
+		padding: 0 12px 40px;
+		width: 100%;
+	}
+	.title {
+		margin-bottom: 15px;
+		color: var(--white-clr);
+	}
+	.footer-links {
+		ul {
+			li {
+				a {
+					color: var(--light-clr);
+					padding: 3px 0;
+					padding-left: 18px;
+					position: relative;
+					&:hover {
+						padding-left: 21px;
+						color: var(--base-clr);
+					}
+					&::before {
+						position: absolute;
+						left: 0;
+						content: "";
+						width: 6px;
+						height: 6px;
+						@include border-radius(50%);
+						background: var(--base-clr);
+						top: 12px;
+					}
+				}
+			}
+		}
+		max-width: 250px;
+		@include breakpoint(max-xxl) {
+			max-width: 200px;
+		}
+	}
+	.footer-comunity {
+		max-width: 290px;
+	}
+	.footer-logo {
+		max-width: 190px;
+		a {
+			display: block;
+			img {
+				width: 100%;
+			}
+		}
+	}
+	@include breakpoint(max-lg) {
+		.footer-logo {
+			a {
+				max-width: 200px;
+			}
+		}
+		@media screen and (min-width: 450px) {
+			.footer-logo,
+			.footer-links,
+			.footer-comunity {
+				max-width: 50%;
+			}
+			.footer-logo {
+				order: 2;
+			}
+			.mobile-second-item {
+				order: 1;
+			}
+		}
+	}
+	@media screen and (max-width: 449.9px) {
+		.footer-logo,
+		.footer-comunity {
+			max-width: 100%;
+		}
+		.footer-links {
+			max-width: 200px;
+		}
+	}
+}
+.footer-input-group {
+	.form-control {
+		outline: none;
+		box-shadow: none !important;
+		border: 1px solid var(--border-clr);
+		height: 45px;
+		@include border-radius(24px !important);
+		padding: 0 65px 0 20px;
+		&:focus {
+			border-color: var(--base-clr);
+		}
+		background: rgba(var(--title-clr), 0.1);
+	}
+	.input-group-text {
+		@include border-radius(20px !important);
+		height: 37px;
+		width: 50px;
+		justify-content: center;
+		position: absolute;
+		right: 5px;
+		top: 4px;
+		z-index: 9;
+	}
+	position: relative;
+}
+footer {
+	font-size: 14px;
+	line-height: 1.65;
+	position: relative;
+	color: var(--light-clr);
+	overflow: hidden;
+	.banner-overlay {
+		opacity: 0.96;
+	}
+}
