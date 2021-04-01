@@ -1,0 +1,136 @@
+.cmn--btn {
+	font-family: var(--heading-fonts);
+	position: relative;
+	color: var(--dark-clr);
+	border-radius: 7px;
+	width: auto;
+	font-weight: 500;
+	text-transform: capitalize;
+	outline: none;
+	border: none;
+	padding: 10px 25px;
+	overflow: hidden;
+	background: var(--base-clr);
+	text-decoration: none;
+	border: 2px solid var(--base-clr, 0.3);
+	text-align: center;
+	&:hover,
+	&.btn-outline {
+		color: var(--base-clr);
+		background: transparent;
+		border-color: var(--base-clr);
+		.round-effect {
+			&::before {
+				background: var(--base-clr);
+			}
+			i {
+				color: var(--white-clr);
+			}
+		}
+	}
+	&.btn-outline {
+		&:hover {
+			background: var(--base-clr);
+			color: $white;
+		}
+	}
+	.round-effect {
+		position: relative;
+		margin-left: 15px;
+		&::before {
+			width: 25px;
+			height: 25px;
+			@include border-radius(50%);
+			background: rgba(var(--dark-rgb), 0.3);
+			@extend %center;
+		}
+		i {
+			position: relative;
+			z-index: 1;
+		}
+	}
+	&.btn-sm {
+		padding: 4px 20px;
+	}
+}
+button.cmn--btn {
+	padding-top: 0;
+	padding-bottom: 0;
+	height: 50px;
+	&:hover {
+		color: var(--dark-clr);
+		background: var(--base-clr);
+	}
+}
+.btn.cmn--btn {
+	outline: none;
+	box-shadow: none;
+	&:hover {
+		color: $title;
+		border-color: rgba($title, 0.1);
+	}
+}
+
+.video--btn {
+	width: 60px;
+	height: 60px;
+	line-height: 60px;
+	text-align: center;
+	@include border-radius(50%);
+	position: relative;
+	background: var(--base-clr);
+	&::after,
+	&::before {
+		@extend %center;
+		width: 100%;
+		height: 100%;
+		@include border-radius(50%);
+		background: var(--base-clr);
+		opacity: 0.4;
+	}
+	&::after {
+		animation: inside-ripple 2s linear infinite;
+		animation-delay: 1s;
+	}
+	&::before {
+		animation: outside-ripple 2s linear infinite;
+	}
+	i {
+		position: relative;
+		z-index: 1;
+		color: $white;
+	}
+}
+@keyframes inside-ripple {
+	0% {
+		@include transform(translate(-50%, -50%) scale(1.1));
+	}
+	50% {
+		@include transform(translate(-50%, -50%) scale(1.5));
+	}
+	100% {
+		@include transform(translate(-50%, -50%) scale(1.5));
+		opacity: 0;
+	}
+}
+@keyframes outside-ripple {
+	0% {
+		@include transform(translate(-50%, -50%) scale(1));
+	}
+	50% {
+		@include transform(translate(-50%, -50%) scale(1.5));
+	}
+	100% {
+		@include transform(translate(-50%, -50%) scale(1.5));
+		opacity: 0;
+	}
+}
+.btn__grp {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	margin: -4px;
+	a {
+		margin: 4px;
+	}
+}

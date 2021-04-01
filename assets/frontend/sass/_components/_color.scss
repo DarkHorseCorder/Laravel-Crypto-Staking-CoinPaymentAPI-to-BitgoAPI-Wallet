@@ -1,0 +1,154 @@
+.bg--body {
+	background-color: var(--body-bg) !important;
+}
+.bg--section {
+	background-color: var(--section-bg) !important;
+}
+
+.btn--base,
+.badge--base,
+.bg--base {
+	background-color: var(--base-clr) !important;
+}
+.btn--primary,
+.badge--primary,
+.bg--primary {
+	background-color: $primary-color !important;
+}
+.btn--secondary,
+.badge--secondary,
+.bg--secondary {
+	background-color: $secondary-color !important;
+}
+
+.btn--success,
+.badge--success,
+.bg--success {
+	background-color: $success-color !important;
+}
+
+.btn--danger,
+.badge--danger,
+.bg--danger {
+	background-color: $danger-color !important;
+}
+
+.btn--warning,
+.badge--warning,
+.bg--warning {
+	background-color: $warning-color !important;
+}
+.btn--warning {
+	color: $dark-color !important;
+}
+.btn--info,
+.badge--info,
+.bg--info {
+	background-color: $info-color !important;
+}
+.btn--dark,
+.badge--dark,
+.bg--dark {
+	background-color: var(--dark-clr) !important;
+}
+.btn--white,
+.badge--white,
+.bg--white {
+	background-color: $white !important;
+}
+[class*="btn--"] {
+	color: $white;
+	font-weight: 500;
+	&:hover {
+		color: $white;
+	}
+}
+.btn--warning,
+.badge--warning,
+.btn--white,
+.badge--white {
+	color: $title;
+	&:hover {
+		color: $title;
+	}
+}
+.btn--black,
+.badge--black,
+.bg--black {
+	background-color: #000 !important;
+}
+.btn--title,
+.badge--title,
+.bg--title {
+	background-color: var(--title-clr) !important;
+}
+.text--primary {
+	color: $primary-color !important;
+}
+.text--secondary {
+	color: $secondary-color !important;
+}
+
+.text--success {
+	color: $success-color !important;
+}
+
+.text--danger {
+	color: $danger-color !important;
+}
+
+.text--warning {
+	color: $warning-color !important;
+}
+
+.text--info {
+	color: $info-color !important;
+}
+
+.text--dark {
+	color: $dark-color !important;
+}
+
+.text--white {
+	color: $white !important;
+	p,
+	ul li,
+	ul li a,
+	span {
+		color: $light-color;
+	}
+}
+
+.text--black {
+	color: $black !important;
+}
+
+.text--body {
+	color: var(--body-clr) !important;
+}
+.text--base {
+	color: var(--base-clr) !important;
+}
+
+.text--title {
+	color: var(--title-clr) !important;
+}
+
+.text--light {
+	color: $light-color !important;
+}
+.bg--transparent {
+	background-color: transparent !important;
+}
+.bg--none {
+	background: none !important;
+}
+.text--star {
+	color: $star;
+}
+a {
+	text-decoration: none;
+}
+*[class*="border"] {
+	border-color: var(--border-clr) !important;
+}
