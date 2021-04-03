@@ -1,0 +1,394 @@
+.parent-menu {
+	position: relative;
+	z-index: 999 !important;
+	> a {
+		align-items: center;
+		&::after {
+			content: "\f107";
+			font-weight: 700;
+			font-family: "Font Awesome 5 Free";
+			margin-left: 5px;
+			@include transition($transition);
+			display: inline-block;
+			@include breakpoint(max-lg) {
+				margin-left: auto;
+			}
+		}
+	}
+	&:hover,
+	&.open {
+		> a {
+			&::after {
+				@include transform(rotate(-180deg));
+			}
+		}
+	}
+	@include breakpoint(lg) {
+		&.open {
+			.submenu {
+				display: block !important;
+			}
+		}
+		.submenu {
+			display: block !important;
+		}
+	}
+}
+.nav-toggle {
+	position: relative;
+	cursor: pointer;
+	width: 25px;
+	height: 20px;
+	span {
+		position: absolute;
+		display: inline-block;
+		height: 3px;
+		width: 100%;
+		@include transition($transition);
+		background: $white;
+		left: 0;
+		&:first-child {
+			top: 0;
+		}
+		&:nth-child(2) {
+			top: 52%;
+			transform: translateY(-65%);
+		}
+		&:last-child {
+			bottom: 0;
+		}
+	}
+	&.active {
+		span {
+			&:first-child {
+				@include transform(rotate(45deg) translate(3px, 9px));
+			}
+			&:nth-child(2) {
+				opacity: 0;
+			}
+			&:last-child {
+				@include transform(rotate(-45deg) translate(3px, -9px));
+			}
+		}
+	}
+}
+.navbar-top {
+	position: relative;
+	z-index: 999;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-bottom: 1px solid rgba($white, 0.1);
+	@include breakpoint(max-md) {
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+}
+.social-icons {
+	@extend %flex;
+	justify-content: center;
+	margin: -3px;
+	li {
+		padding: 3px;
+		a {
+			i {
+				width: 30px;
+				height: 30px;
+				line-height: 30px;
+				text-align: center;
+				@include border-radius(3px);
+				border: 1px solid rgba($white, 0.051);
+				@include transition($transition);
+				color: var(--base-clr);
+				background: rgba($white, 0.061);
+				&[class*="facebook"] {
+					color: $facebook;
+				}
+				&[class*="whatsapp"] {
+					color: $whatsapp;
+				}
+				&[class*="twitter"] {
+					color: $twitter;
+				}
+				&[class*="linkedin"] {
+					color: $linkedin;
+				}
+				&[class*="instagram"] {
+					color: $instagram;
+				}
+				&[class*="google"] {
+					color: $google;
+				}
+				&[class*="youtube"] {
+					color: $youtube;
+				}
+				&[class*="camera"] {
+					color: $camera;
+				}
+				&[class*="pinterest"] {
+					color: $pinterest;
+				}
+				&[class*="tumblr"] {
+					color: $tumblr;
+				}
+				&[class*="behance"] {
+					color: $behance;
+				}
+				&[class*="skype"] {
+					color: $skype;
+				}
+				&[class*="vimeo"] {
+					color: $vimeo;
+				}
+			}
+		}
+	}
+}
+.contact-bar {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	@include breakpoint(max-md) {
+		justify-content: center;
+	}
+	li {
+		a {
+			color: $white;
+		}
+		&:not(:last-child) {
+			border-right: 1px solid rgba($white, 0.2);
+			a {
+				padding: 0 10px;
+				font-size: 14px;
+			}
+		}
+		&:nth-last-child(2) {
+			border: none;
+		}
+	}
+}
+header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 9999;
+	@include transition($transition);
+}
+.navbar-bottom {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	z-index: 999;
+	&.active {
+		box-shadow: 0 0 5px rgba(var(--base-rgb), 0.2);
+		position: fixed;
+		bottom: unset;
+		top: 0;
+		animation: fadeInDown 0.4s;
+		-webkit-animation: fadeInDown 0.4s;
+		-moz-animation: fadeInDown 0.4s;
+		background: var(--dark-clr);
+		.mode--toggle {
+			display: block !important;
+		}
+	}
+}
+.navbar-wrapper {
+	padding: 15px 0;
+	.logo {
+		max-width: 190px;
+		@include breakpoint(max-sm) {
+			max-width: 130px;
+		}
+		a {
+			display: block;
+		}
+		img {
+			width: 100%;
+			height: 45px;
+			object-fit: contain;
+			object-position: left center;
+		}
+	}
+}
+.change-language {
+	display: flex;
+	align-items: center;
+	font-size: 14px;
+	.language-bar {
+		height: 32px;
+		padding-left: 5px;
+		border: 1px solid rgba($white, 0.2);
+		border-radius: 4px;
+		margin-left: 15px;
+		outline: none;
+		background: rgba($white, 0.1);
+		color: $white;
+		option {
+			color: $title;
+			background: var(--section-bg);
+		}
+		&:focus {
+			box-shadow: none;
+		}
+	}
+	display: flex;
+	align-items: center;
+	@media screen and (max-width: 375px) {
+		font-size: 12px;
+		font-family: var(--heading-fonts);
+		.language-bar {
+			margin-left: 5px;
+		}
+	}
+	&.text--title {
+		.language-bar {
+			color: $title;
+			border-color: var(--border-clr);
+		}
+	}
+}
+/*Nav Menu*/
+.navbar-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+}
+.nav-menu {
+	@include breakpoint(lg) {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		li {
+			a:not([class*="btn"]) {
+				// color: $title;
+				color: $white;
+				font-family: var(--heading-fonts);
+				text-transform: capitalize;
+				padding: 5px 15px;
+				font-weight: 600;
+			}
+			.cmn--btn {
+				padding: 5px 10px;
+				@include border-radius(5px);
+			}
+			.sub-nav {
+				min-width: 220px;
+				position: absolute;
+				left: 0;
+				top: 100%;
+				border-bottom: 3px solid var(--base-clr);
+				@include border-radius(5px);
+				background: var(--dark-clr);
+				@include transition($transition);
+				li {
+					a {
+						padding: 5px 15px;
+						font-size: 14px;
+						display: flex;
+						justify-content: space-between;
+						align-items: center;
+						&:hover {
+							padding-left: 20px;
+							background: var(--base-clr);
+							color: $white;
+						}
+					}
+					&:not(:last-child) {
+						> a {
+							// border-bottom: 1px solid var(--border-clr);
+							border-bottom: 1px solid rgba($white, 0.1);
+						}
+					}
+				}
+				.sub-nav {
+					left: 100%;
+					top: 0;
+				}
+			}
+			&:not(:hover) {
+				.sub-nav {
+					@include transform(translateY(10px));
+					opacity: 0;
+					visibility: hidden;
+				}
+			}
+			&:nth-last-of-type(1),
+			&:nth-last-of-type(2),
+			&:nth-last-of-type(3) {
+				.sub-nav {
+					left: unset;
+					right: 0;
+					.sub-nav {
+						right: 100%;
+					}
+				}
+			}
+		}
+	}
+}
+/*Nav Mobile Menu*/
+@include breakpoint(max-lg) {
+	.nav-menu-area {
+		position: fixed;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		width: 100%;
+		z-index: 999;
+		max-width: 320px;
+		background: var(--dark-clr);
+		padding: 30px 20px;
+		overflow-y: auto;
+		@include transition($transition);
+		transform-origin: left;
+		.menu-close {
+			position: absolute;
+			right: 30px;
+			top: 20px;
+			font-size: 20px;
+		}
+		&:not(.active) {
+			@include transform(scaleX(0));
+		}
+		.nav-menu {
+			li {
+				a {
+					color: $white;
+					display: flex;
+					justify-content: space-between;
+					padding: 5px 0;
+					border-bottom: 1px solid rgba($white, 0.2);
+					&.cmn--btn {
+						background: $white;
+						color: var(--base-clr);
+						display: inline-flex;
+						padding: 5px 15px;
+						margin-top: 15px;
+					}
+				}
+			}
+			.sub-nav {
+				padding-left: 15px;
+				display: none;
+				font-size: 14px;
+			}
+		}
+	}
+}
+.remove-scroll,
+.modal-open {
+	header {
+		visibility: hidden;
+		opacity: 0;
+	}
+}
+.mode--toggle {
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	text-align: right;
+	cursor: pointer;
+	color: $white;
+}
