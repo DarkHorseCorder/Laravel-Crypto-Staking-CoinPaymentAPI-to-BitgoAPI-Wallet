@@ -1,0 +1,174 @@
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+	border: 1px solid var(--base-clr);
+	-webkit-text-fill-color: var(--title-clr);
+	box-shadow: 0 0 0px 1000px var(--body-bg) inset;
+	-webkit-box-shadow: 0 0 0px 1000px var(--body-bg) inset;
+	transition: background-color 5000s ease-in-out 0s;
+}
+.form-control {
+	background: var(--body-bg) !important;
+	border: 1px solid var(--border-clr);
+	outline: none;
+	box-shadow: none !important;
+	color: var(--title-clr);
+	&:focus {
+		border-color: var(--base-clr);
+		color: var(--title-clr);
+	}
+	&.cmn--btn {
+		color: var(--white-clr);
+	}
+	&:-webkit-autofill,
+	&:-webkit-autofill:hover,
+	&:-webkit-autofill:focus {
+		border: 1px solid var(--base-clr) !important;
+		-webkit-text-fill-color: var(--title-clr) !important;
+		box-shadow: 0 0 0px 1000px var(--body-bg) inset !important;
+		-webkit-box-shadow: 0 0 0px 1000px var(--body-bg) inset !important;
+		transition: background-color 5000s ease-in-out 0s !important;
+	}
+	&.text--dark {
+		background: var(--section-light) !important;
+		border-color: var(--border-light) !important;
+		color: var(--dark-clr) !important;
+		&:-webkit-autofill,
+		&:-webkit-autofill:hover,
+		&:-webkit-autofill:focus {
+			border: 1px solid var(--base-clr) !important;
+			-webkit-text-fill-color: var(--dark-clr) !important;
+			box-shadow: 0 0 0px 1000px var(--section-light) inset !important;
+			-webkit-box-shadow: 0 0 0px 1000px var(--section-light) inset !important;
+			transition: background-color 5000s ease-in-out 0s !important;
+		}
+	}
+}
+input,
+select,
+button {
+	&.form-control {
+		height: 50px;
+		color: var(--title-clr);
+		&:focus {
+			color: var(--title-clr);
+		}
+		&[type="number"] {
+			&::-webkit-inner-spin-button,
+			&::-webkit-outer-spin-button {
+				display: none;
+			}
+		}
+	}
+}
+select.form-control {
+	-webkit-appearance: button;
+}
+textarea {
+	&.form-control {
+		padding-top: 15px;
+		height: 150px;
+	}
+}
+select.form--control {
+	&:focus {
+		background: var(--section-bg);
+	}
+	-webkit-appearance: button;
+	option {
+		color: var(--title-clr);
+	}
+}
+.form-label {
+	font-family: var(--heading-fonts);
+	font-weight: 500;
+	text-transform: capitalize;
+}
+.btn {
+	font-family: var(--heading-fonts);
+}
+.form-check {
+	.form-check-input {
+		&:checked {
+			background-color: var(--base-clr);
+			border-color: var(--base-clr);
+		}
+		&:focus {
+			box-shadow: var(--base-shadow-sm);
+		}
+	}
+}
+/*Account Section*/
+.accounts-section {
+	padding: 50px;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	.accounts-inner {
+		position: relative;
+		z-index: 2;
+		flex-grow: 1;
+		@include border-radius(10px);
+		display: flex;
+		flex-direction: column;
+		&__wrapper {
+			@include border-radius(10px);
+			overflow: hidden;
+			flex-grow: 1;
+			display: flex;
+			flex-wrap: wrap;
+			a {
+				font-family: var(--heading-fonts);
+			}
+			.accounts-left {
+				width: 50%;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				border: 1px solid var(--border-clr);
+				border-right: none;
+				@include border-radius(10px 0 0 10px);
+				&-content {
+					padding: 40px;
+					max-width: 540px;
+					margin: 0 auto;
+					.top--icon {
+						font-size: 50px;
+						line-height: 1;
+						color: var(--primary-clr);
+					}
+					.section-header {
+						max-width: 540px;
+					}
+				}
+			}
+			.accounts-right {
+				width: 50%;
+				background: url(./img/account-bg.png) var(--primary-clr) no-repeat
+					center center / 100% 100%;
+				padding: 50px 30px;
+				min-height: 100%;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: space-evenly;
+				img {
+					width: 100%;
+					max-width: 460px;
+				}
+				.section-header {
+					max-width: 540px;
+				}
+			}
+		}
+	}
+	@include breakpoint(max-md) {
+		display: none;
+	}
+}

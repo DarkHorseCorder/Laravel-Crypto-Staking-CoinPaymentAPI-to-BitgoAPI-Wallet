@@ -1,0 +1,122 @@
+/*Blog Sidebar*/
+.widget {
+	@include border-radius(7px);
+	&:not(:last-child) {
+		margin-bottom: 25px;
+	}
+	&-header {
+		padding: 12px 15px;
+		background: var(--primary-clr);
+		@include border-radius(7px 7px 0 0);
+	}
+	&-body {
+		border: 1px solid var(--border-clr);
+		border-top: none;
+		padding: 20px;
+		@include border-radius(0 0 7px 7px);
+		.archive-links {
+			li {
+				a {
+					color: var(--title-clr);
+					display: flex;
+					justify-content: space-between;
+					padding: 8px 0;
+					&::before {
+						content: "\f101";
+						margin-right: 5px;
+						display: inline-block;
+						font-family: "Font Awesome 5 Free";
+						font-weight: 600;
+						color: var(--base-clr);
+						@include transition($transition);
+					}
+					span {
+						&:last-child {
+							margin-left: auto;
+						}
+					}
+					&:hover {
+						padding-left: 2px;
+						&::before {
+							@include transform(translateX(3px));
+						}
+					}
+				}
+				&:not(:last-child) {
+					border-bottom: 1px solid var(--border-clr);
+				}
+				&:first-child {
+					a {
+						padding-top: 0;
+					}
+				}
+				&:last-child {
+					a {
+						padding-bottom: 0;
+					}
+				}
+			}
+		}
+		.latest-posts {
+			li {
+				padding: 0;
+				&:not(:last-child) {
+					padding-bottom: 10px;
+					border-bottom: 1px solid var(--border-clr);
+				}
+				&:not(:first-child) {
+					padding-top: 10px;
+				}
+				a {
+					display: flex;
+					.img {
+						width: 70px;
+						img {
+							height: 70px;
+							object-fit: cover;
+							width: 100%;
+							@include border-radius(4px);
+						}
+					}
+					.cont {
+						width: calc(100% - 70px);
+						padding-left: 15px;
+						.subtitle {
+							margin: 0;
+							font-size: 18px;
+							display: -webkit-box;
+							-webkit-box-orient: vertical;
+							-webkit-line-clamp: 2;
+							overflow: hidden;
+							text-overflow: ellipsis;
+						}
+						.date {
+							font-size: 14px;
+							color: var(--base-clr);
+						}
+					}
+				}
+			}
+		}
+		.widget-tags {
+			@extend %flex;
+			margin: -3px;
+			li {
+				padding: 3px;
+				a {
+					padding: 7px 15px;
+					@include border-radius(4px);
+					background: var(--section-bg);
+					border: 1px solid var(--border-clr);
+					color: var(--title-clr);
+					font-size: 14px;
+					&:hover,
+					&.active {
+						background: var(--base-clr);
+						border-color: var(--base-clr);
+					}
+				}
+			}
+		}
+	}
+}
